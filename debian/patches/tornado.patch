@@ -1,0 +1,13 @@
+Index: flower/flower/command.py
+===================================================================
+--- flower.orig/flower/command.py	2014-07-03 15:04:39.000000000 +0200
++++ flower/flower/command.py	2014-07-03 16:12:04.000000000 +0200
+@@ -52,7 +52,7 @@
+         # parse the command line to get --conf option
+         parse_command_line([prog_name] + argv)
+         try:
+-            parse_config_file(options.conf, final=False)
++            parse_config_file(options.conf)
+             parse_command_line([prog_name] + argv)
+         except IOError:
+             if options.conf != settings.CONFIG_FILE:
