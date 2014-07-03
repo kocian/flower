@@ -3,19 +3,11 @@ Maintainer: Benjamin Drung <benjamin.drung@profitbricks.com>
 Section: python
 Priority: optional
 Build-Depends: debhelper (>= 9),
-               dh-python,
-               libjs-d3,
-               libjs-jquery,
-               libjs-jquery-ui,
-               libjs-rickshaw,
-               libjs-twitter-bootstrap,
                python-all (>= 2.6.6-3~),
                python-celery,
                python-setuptools (>= 0.6b3),
                python-sphinx,
-               python-tornado,
-               python3-all,
-               python3-setuptools
+               python-tornado
 X-Python-Version: >= 2.6
 Standards-Version: 3.9.5
 Homepage: https://github.com/mher/flower
@@ -24,12 +16,7 @@ Vcs-Git: git://anonscm.debian.org/collab-maint/flower.git
 
 Package: python-flower
 Architecture: all
-Depends: libjs-d3,
-         libjs-jquery,
-         libjs-jquery-ui,
-         libjs-rickshaw,
-         libjs-twitter-bootstrap,
-         ${misc:Depends},
+Depends: ${misc:Depends},
          ${python:Depends}
 Description: web based tool for monitoring and administrating Celery clusters
  Flower is a web based tool for monitoring and administrating Celery clusters.

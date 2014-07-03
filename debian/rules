@@ -4,7 +4,7 @@ export PYBUILD_NAME=flower
 export PYBUILD_DISABLE_python3=1
 
 %:
-	dh $@ --with python2 --buildsystem=pybuild
+	dh $@ --with python2
 
 override_dh_auto_clean:
 	dh_auto_clean
