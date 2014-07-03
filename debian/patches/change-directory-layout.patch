@@ -1,0 +1,69 @@
+From: Benjamin Drung <benjamin.drung@profitbricks.com>
+Date: Tue, 18 Mar 2014 20:20:58 +0100
+Subject: [PATCH] Change directory layout of static Javascript files.
+ Create one directory per project (bootstrap, d3, jquery, jquery-ui) and move
+ all related file in this directory. This makes it easier to track the origin
+ of a static file and to update a library by just replacing one directory.
+Bug: https://github.com/mher/flower/pull/199
+
+--- a/flower/templates/base.html
++++ b/flower/templates/base.html
+@@ -12,10 +12,10 @@
+       body { padding-top: 60px; }
+     </style>
+ 
+-    <link href="{{ static_url('css/bootstrap.css') }}" rel="stylesheet">
+-    <link href="{{ static_url('css/bootstrap-responsive.css') }}" rel="stylesheet">
+-    <link href="{{ static_url('css/rickshaw.min.css') }}" rel="stylesheet">
+-    <link href="{{ static_url('css/jquery-ui.css') }}" rel="stylesheet">
++    <link href="{{ static_url('bootstrap/css/bootstrap.css') }}" rel="stylesheet">
++    <link href="{{ static_url('bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
++    <link href="{{ static_url('rickshaw/rickshaw.min.css') }}" rel="stylesheet">
++    <link href="{{ static_url('jquery-ui/themes/base/jquery-ui.css') }}" rel="stylesheet">
+     <link href="{{ static_url('css/flower.css') }}" rel="stylesheet">
+ 
+     {% block extra_styles %}
+@@ -55,25 +55,25 @@
+     <!-- Le javascript
+     ================================================== -->
+     <!-- Placed at the end of the document so the pages load faster -->
+-    <script src="{{ static_url('js/jquery-1.7.2.min.js') }}"></script>
+-    <script src="{{ static_url('js/jquery-ui-1-8-15.min.js') }}"></script>
++    <script src="{{ static_url('jquery/jquery.min.js') }}"></script>
++    <script src="{{ static_url('jquery-ui/jquery-ui.min.js') }}"></script>
+ 
+-    <script src="{{ static_url('js/bootstrap-transition.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-alert.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-modal.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-dropdown.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-scrollspy.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-tab.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-tooltip.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-popover.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-button.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-collapse.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-carousel.js') }}"></script>
+-    <script src="{{ static_url('js/bootstrap-typeahead.js') }}"></script>
+-
+-    <script src="{{ static_url('js/d3.min.js') }}"></script>
+-    <script src="{{ static_url('js/d3.layout.min.js') }}"></script>
+-    <script src="{{ static_url('js/rickshaw.min.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-transition.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-alert.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-modal.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-dropdown.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-scrollspy.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-tab.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-tooltip.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-popover.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-button.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-collapse.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-carousel.js') }}"></script>
++    <script src="{{ static_url('bootstrap/js/bootstrap-typeahead.js') }}"></script>
++
++    <script src="{{ static_url('d3/d3.min.js') }}"></script>
++    <script src="{{ static_url('d3/d3.layout.min.js') }}"></script>
++    <script src="{{ static_url('rickshaw/rickshaw.min.js') }}"></script>
+ 
+     <script src="{{ static_url('js/flower.js') }}"></script>
+   </body>

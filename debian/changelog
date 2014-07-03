@@ -1,0 +1,5 @@
+flower (0.6.0+dfsg-1) unstable; urgency=low
+
+  * Initial version (Closes: #748273).
+
+ -- Benjamin Drung <benjamin.drung@profitbricks.com>  Thu, 15 May 2014 17:35:12 +0200

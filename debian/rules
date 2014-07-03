@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=flower
+export PYBUILD_DISABLE_python3=1
+
+%:
+	dh $@ --with python2 --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	make -C docs clean
+
+override_dh_auto_build:
+	dh_auto_build
+	make -C docs man
+
+override_dh_auto_install:
+	dh_auto_install
+	set -e; for python in $(shell pyversions -r); do \
+		rm -r debian/python-flower/usr/lib/$$python/dist-packages/flower/static; \
+		rm -r debian/python-flower/usr/lib/$$python/dist-packages/flower/templates; \
+		ln -s /usr/share/flower/static debian/python-flower/usr/lib/$$python/dist-packages/flower/static; \
+		ln -s /usr/share/flower/templates debian/python-flower/usr/lib/$$python/dist-packages/flower/templates; \
+	done
