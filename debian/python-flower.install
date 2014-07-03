@@ -1,3 +1,2 @@
-docs/.build/man/flower.1 /usr/share/man/man1/
 flower/static /usr/share/flower
 flower/templates /usr/share/flower
