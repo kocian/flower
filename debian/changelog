@@ -1,3 +1,9 @@
+flower (0.7.0-szn1) testing; urgency=low
+
+  * repacked
+
+ -- Ondrej Kocian <ondrej.kocian@firma.seznam.cz>  Fri, 04 Jul 2014 14:52:08 +0200
+
 flower (0.6.0+dfsg-1) unstable; urgency=low
 
   * Initial version (Closes: #748273).
